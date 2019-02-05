@@ -48,11 +48,16 @@ bool LinkedList<T>::search(T value) const
 	while(temp != nullptr)
 	{
 		if(value == temp->getValue())
-		{return(true);}
+		{
+			isFound = true;
+			return(isFound);
+		}
 		else
-		{temp = temp->getNext();}
+		{
+			temp = temp->getNext();
+		}
 	}
-	return(false);
+	return(isFound);
 }
 
 template <typename T>
